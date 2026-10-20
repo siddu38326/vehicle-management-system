@@ -1,0 +1,185 @@
+/* VMSS Automotive Design System */
+:root {
+    --vmss-navy: #0f172a;
+    --vmss-navy-light: #1e293b;
+    --vmss-navy-dark: #090d16;
+    --vmss-orange: #ea580c;
+    --vmss-orange-hover: #c2410c;
+    --vmss-teal: #0d9488;
+    --vmss-gray-bg: #f8fafc;
+    --vmss-card-border: #e2e8f0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--vmss-gray-bg);
+    color: #334155;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Navbar Styling */
+.navbar-vmss {
+    background-color: var(--vmss-navy);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.brand-badge {
+    background: linear-gradient(135deg, var(--vmss-orange), #f97316);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-left: 0.35rem;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.82)), url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    color: #fff;
+    padding: 5rem 0;
+}
+
+/* Card Styling */
+.card-stat {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+/* Sidebar styling for customer & admin dashboards */
+.dashboard-sidebar {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--vmss-card-border);
+    padding: 1.25rem;
+}
+
+.dashboard-sidebar .nav-link {
+    color: #475569;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.dashboard-sidebar .nav-link:hover {
+    background-color: #f1f5f9;
+    color: var(--vmss-orange);
+}
+
+.dashboard-sidebar .nav-link.active {
+    background-color: var(--vmss-navy);
+    color: #fff;
+}
+
+/* Buttons */
+.btn-primary-vmss {
+    background-color: var(--vmss-orange);
+    border-color: var(--vmss-orange);
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-primary-vmss:hover {
+    background-color: var(--vmss-orange-hover);
+    border-color: var(--vmss-orange-hover);
+    color: #fff;
+}
+
+.btn-navy {
+    background-color: var(--vmss-navy);
+    border-color: var(--vmss-navy);
+    color: #fff;
+}
+
+.btn-navy:hover {
+    background-color: var(--vmss-navy-light);
+    border-color: var(--vmss-navy-light);
+    color: #fff;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    list-style: none;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 8px;
+    width: 2px;
+    background: #cbd5e1;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--vmss-orange);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--vmss-orange);
+}
+
+/* Print CSS */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #printable-invoice, #printable-invoice * {
+        visibility: visible;
+    }
+    #printable-invoice {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 0;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    .no-print {
+        display: none !important;
+    }
+}

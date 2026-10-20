@@ -1,0 +1,13 @@
+target/
+*.class
+*.war
+*.ear
+*.log
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+.DS_Store
+*.tmp
+database.local.properties
